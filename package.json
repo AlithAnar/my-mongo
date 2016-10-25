@@ -1,0 +1,12 @@
+{
+  "name": "my-mongo",
+  "version": "1.2.4",
+  "private": false,
+  "dependencies": {
+    "mongodb":""
+  },
+  "main": "my-mongo.js",
+  "author": "Mathieu Vidalies",
+  "license": "ISC",
+  "description": "Handles MongoDb connections (connect function)"
+}
