@@ -90,6 +90,16 @@ mongo.prototype.remove = function (criteria, callback)
   }, criteria, null, null, callback);
 }
 
+mongo.prototype.findOne = function (query, callback)
+{
+  this.doit(function (db, c, query, update, options, callback) {
+    db.collection(c).findOne(query, function(err, docs) {
+      if (mongo.debug && err) { console.log(err); }
+      callback(err, docs);
+    });
+  }, query, null, null, callback);
+}
+
 mongo.prototype.find = function (query, callback)
 {
   this.doit(function (db, c, query, update, options, callback) {

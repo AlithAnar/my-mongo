@@ -17,6 +17,7 @@ Work in progress, current implemented functions :
     mongo.insert         (uses db.collection(c).insert)
     mongo.update         (uses db.collection(c).update)
     mongo.remove         (uses db.collection(c).remove)
+    mongo.findOne        (uses db.collection(c).findOne)
     mongo.find           (uses db.collection(c).find)
     mongo.findById       (uses db.collection(c).findOne)
     mongo.dropCollection (uses db.collection(c).drop)
