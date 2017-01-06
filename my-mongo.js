@@ -90,6 +90,11 @@ mongo.prototype.remove = function (criteria, callback)
   }, criteria, null, null, callback);
 }
 
+mongo.prototype.removeById = function (id, callback)
+{
+  this.remove ({ _id: ObjectId(id) }, callback);
+}
+
 mongo.prototype.findOne = function (query, callback)
 {
   this.doit(function (db, c, query, update, options, callback) {
@@ -112,12 +117,7 @@ mongo.prototype.find = function (query, callback)
 
 mongo.prototype.findById = function (id, callback)
 {
-  this.doit(function (db, c, id, update, options, callback) {
-    db.collection(c).findOne({_id:ObjectId(id)}, function(err, doc){
-      if (mongo.debug && err) { console.log(err); }
-      callback(err, doc);
-    });
-  }, id, null, null, callback);
+  this.findOne ({ _id: ObjectId(id) }, callback);
 }
 
 mongo.prototype.dropCollection = function (callback)
