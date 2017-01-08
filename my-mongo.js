@@ -105,10 +105,10 @@ mongo.prototype.findOne = function (query, callback)
   }, query, null, null, callback);
 }
 
-mongo.prototype.find = function (query, callback)
+mongo.prototype.find = function (query, projection, callback)
 {
   this.doit(function (db, c, query, update, options, callback) {
-    db.collection(c).find(query).toArray(function(err, docs) {
+    db.collection(c).find(query, projection).toArray(function(err, docs) {
       if (mongo.debug && err) { console.log(err); }
       callback(err, docs);
     });
