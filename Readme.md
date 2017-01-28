@@ -45,7 +45,7 @@ Example :
         console.log(results.result);
       });
 
-      mongo.find({}, function(err, results){
+      mongo.find({}, {}, function(err, results){
         console.log(results);
 
         mongo.dropCollection(function(err, results){
