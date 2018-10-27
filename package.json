@@ -3,9 +3,9 @@
   "version": "1.2.9",
   "private": false,
   "dependencies": {
-    "mongodb":"2.1"
+    "mongodb": "^3.1.8"
   },
-  "main": "my-mongo.js",
+  "main": "index.js",
   "author": "Mathieu Vidalies",
   "license": "ISC",
   "description": "Handles MongoDb connections (connect function). Lets redefine functions."
